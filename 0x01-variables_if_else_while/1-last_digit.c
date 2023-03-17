@@ -21,6 +21,13 @@ int main(void)
 	sprintf(number, "%d", n);
 	last = strlen(number) - 1;
 	last_digit = number[last] - '0';
+	if (n < 0)
+	{
+		last_digit *= -1;
+	} else
+	{
+		last_digit *= 1;
+	}
 
 	if (last_digit > 5)
 	{
