@@ -18,6 +18,7 @@ void times_table(void)
 			val = i * j;
 			_putchar('0' + val);
 			_putchar(',');
+			_putchar(' ');
 		}
 
 		_putchar('\n');
