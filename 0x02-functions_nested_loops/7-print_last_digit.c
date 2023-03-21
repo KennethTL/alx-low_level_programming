@@ -9,16 +9,17 @@
 int print_last_digit(int c)
 {
 	int rval;
+	int val = c;
 
-	if (c < 0)
+	if (val < 0)
 	{
-		c = c * -1;
-		rval = c % 10;
+		val = val * -1;
+		rval = val % 10;
 		_putchar('0' + rval);
 
 	} else
 	{
-		rval = c % 10;
+		rval = val % 10;
 		_putchar('0' + rval);
 	}
 
