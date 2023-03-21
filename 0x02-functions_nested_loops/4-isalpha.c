@@ -10,7 +10,7 @@ int _isalpha(int c)
 {
 	int i;
 	int j;
-	int rval;
+	int rval = 0;
 
 	for (i = 97; i <= 122; i++)
 	{
@@ -22,8 +22,6 @@ int _isalpha(int c)
 				break;
 			}
 		}
-
-		rval = 0;
 	}
 
 	return (rval);
