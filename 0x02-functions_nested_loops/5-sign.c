@@ -13,12 +13,15 @@ int print_sign(int n)
 	if (n > 0)
 	{
 		rval = 1;
+		_putchar('+');
 	} else if (n == 0)
 	{
 		rval = 0;
+		_putchar('0');
 	} else
 	{
 		rval = -1;
+		_putchar('-');
 	}
 
 	return (rval);
