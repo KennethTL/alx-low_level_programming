@@ -15,13 +15,18 @@ int print_last_digit(int c)
 	{
 		val = val * -1;
 		rval = val % 10;
-		_putchar('0' + rval);
 
 	} else
 	{
 		rval = val % 10;
-		_putchar('0' + rval);
 	}
+
+	if (rval < 0)
+	{
+		rval = rval * -1;
+	}
+
+	_putchar('0' + rval);
 
 	return (rval);
 }
