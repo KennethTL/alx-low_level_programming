@@ -17,22 +17,26 @@ void times_table(void)
 		{
 			val = i * j;
 
-			if (val < 10)
+			if (j == 0)
 			{
+				_putchar('0' + val);
+			}
+
+			if (val < 10 && j != 0)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
 				_putchar('0' + val);
 			} else if (val >= 10)
 			{
+				_putchar(',');
+				_putchar(' ');
 				_putchar('0' + (val / 10));
 				_putchar('0' + (val % 10));
 			}
-			if (j == 9)
-			{
-				continue;
-			}
-			_putchar(',');
-			_putchar(' ');
-		}
 
 		_putchar('\n');
+		}
 	}
 }
