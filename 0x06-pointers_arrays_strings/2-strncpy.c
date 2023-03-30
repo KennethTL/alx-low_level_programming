@@ -1,4 +1,3 @@
-#include <stddef.h>
 #include "main.h"
 
 /**
@@ -12,12 +11,12 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	if (dest == NULL || src == NULL || n == 0)
+	if (dest == 0 || src == 0 || n == 0)
 	{
 		return (dest);
 	}
 
-	size_t i = 0;
+	int i = 0;
 
 	while (i < n && src[i] != '\0')
 	{
