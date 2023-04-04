@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -17,6 +18,9 @@ char *_strchr(char *s, char c)
 		{
 			chr_ptr = s;
 			break;
+		} else
+		{
+			chr_ptr = NULL;
 		}
 
 		s++;
