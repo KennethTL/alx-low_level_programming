@@ -22,5 +22,5 @@ char *_strchr(char *s, char c)
 		s++;
 	}
 
-	return chr_ptr;
+	return (chr_ptr);
 }
