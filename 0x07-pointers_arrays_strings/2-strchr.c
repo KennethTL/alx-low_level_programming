@@ -18,10 +18,14 @@ char *_strchr(char *s, char c)
 		buffer = *s++;
 		if (buffer == c)
 		{
-			return (s - 1);
-		} else if (buffer == 0)
+			chr_ptr = (s - 1);
+			break;
+		}
+		if (buffer == 0)
 		{
-			return (NULL);
+			chr_ptr = NULL;
 		}
 	}
+
+	return (chr_ptr);
 }
