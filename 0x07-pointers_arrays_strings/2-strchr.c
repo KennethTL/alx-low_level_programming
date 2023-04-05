@@ -19,6 +19,7 @@ char *_strchr(char *s, char c)
 		if (buffer == c)
 		{
 			chr_ptr = (s - 1);
+			break;
 		}
 		if (buffer == 0)
 		{
