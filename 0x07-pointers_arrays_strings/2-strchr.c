@@ -19,7 +19,6 @@ char *_strchr(char *s, char c)
 		if (buffer == c)
 		{
 			return (s - 1);
-			break;
 		}
 		if (buffer == 0)
 		{
