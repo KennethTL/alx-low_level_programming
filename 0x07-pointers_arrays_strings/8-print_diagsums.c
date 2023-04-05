@@ -18,10 +18,18 @@ void print_diagsums(int *a, int size)
 	diagsum1 = 0;
 	diagsum2 = 0;
 
-	for (position = 0; position < size; position++)
+	for (position = 0; position < (size * size); position++)
 	{
-		diagsum1 = diagsum1 + a[(position * position) + position];
-		diagsum2 = a[(size * (position + 1) - (position + 1))];
+		if (position % (size + 1) == 0)
+		{
+			diagsum1 += *(a + position);
+		}
+
+		if (position % (size - 1) == 0 && position != 0 &&
+				position < size * size - 1)
+		{
+			diagsum2 += *(a + position);
+		}
 	}
 
 	printf("%d. %d", diagsum1, diagsum2);
