@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 		k++;
 	}
 
-	for (val = 0; val <= k; val++)
+	for (val = 0; val <= k - 1; val++)
 	{
 		sum = sum + values[val];
 	}
