@@ -21,31 +21,31 @@ int main(int argc, char *argv[])
 	if (argc == 1)
 	{
 		printf("%d\n", 0);
-
-		return (0);
-	}
-
-	for (i = 1; i < argc; i++)
+	} else
 	{
-		for (j = 0, n = strlen(argv[i]); j < n; j++)
+		for (i = 1; i < argc; i++)
 		{
-			if (!isdigit(argv[i][j]))
+			for (j = 0, n = strlen(argv[i]); j < n; j++)
 			{
-				printf("Error\n");
-				return (1);
+				if (!isdigit(argv[i][j]))
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
+
+			values[k] = atoi(argv[i]);
+			k++;
 		}
 
-		values[k] = atoi(argv[i]);
-		k++;
-	}
+		for (val = 0; val <= k - 1; val++)
+		{
+			sum = sum + values[val];
+		}
 
-	for (val = 0; val <= k - 1; val++)
-	{
-		sum = sum + values[val];
-	}
+		printf("%d\n", sum);
 
-	printf("%d\n", sum);
+	}
 
 	return (0);
 }
