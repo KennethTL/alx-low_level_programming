@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 			}
 		}
 
-		values[k] = atoi(argv[i]);
+		values[k] = strtol(argv[i], NULL, 10);
 		k++;
 	}
 
