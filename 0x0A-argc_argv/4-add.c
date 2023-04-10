@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int i, j, k, n, sum, val;
-	int values[100];
+	int values[1000];
 
 	k = 0;
 	sum = 0;
