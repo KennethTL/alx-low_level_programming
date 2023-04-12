@@ -28,6 +28,15 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+
 	for (i = 0; i < s1_length; i++)
 	{
 		new_string[i] = s1[i];
