@@ -16,25 +16,25 @@ char *argstostr(int ac, char **av)
 	int i, x, k, length = 0;
 
 	if (ac == 0 || av == NULL)
+	{
 		return (NULL);
-
+	}
 	for (i = 0; i < ac; i++)
 	{
 		sbuffer = av[i];
 		x = 0;
 
 		while (sbuffer[x++])
+		{
 			length++;
+		}
 		length++;
 	}
-
 	string = (char *)malloc(sizeof(char) * (length + 1));
-
 	if  (string == NULL)
 	{
 		return (NULL);
 	}
-
 	for (i = 0, x = 0; i < ac && x < length; i++)
 	{
 		sbuffer = av[i];
@@ -42,7 +42,7 @@ char *argstostr(int ac, char **av)
 
 		while (sbuffer[k])
 		{
-			string[x] = s[k];
+			string[x] = sbuffer[k];
 			k++;
 			x++;
 		}
