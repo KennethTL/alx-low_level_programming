@@ -16,7 +16,15 @@ char *str_concat(char *s1, char *s2)
 {
 	char *new_string;
 	int i, size, s1_length, s2_length;
-
+	
+	if (s1 == NULL)
+	{
+		s1_length = 0;
+	}
+	if (s2 == NULL)
+	{
+		s2_length = 0;
+	}
 	s1_length = _strlen(s1);
 	s2_length = _strlen(s2);
 	size = s1_length + s2_length + 1;
@@ -27,16 +35,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-
-	if (s1 == NULL)
-	{
-		s1 = "";
-	}
-	if (s2 == NULL)
-	{
-		s2 = "";
-	}
-
+	
 	for (i = 0; i < s1_length; i++)
 	{
 		new_string[i] = s1[i];
