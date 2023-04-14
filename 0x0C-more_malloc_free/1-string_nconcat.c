@@ -21,8 +21,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	index = 0, j = 0, length1 = 0, length2 = 0;
 
-	length1 = _strlen(s1);
-	length2 = _strlen(s2);
+	if (s1 == NULL)
+	{
+		length1 = 0;
+	} else
+	{
+		length1 = _strlen(s1);
+	}
+	if (s2 == NULL)
+	{
+		length2 = 0;
+	} else
+	{
+		length2 = _strlen(s2);
+	}
 	totalLength = length1 + length2;
 	if (n < length2)
 	{
