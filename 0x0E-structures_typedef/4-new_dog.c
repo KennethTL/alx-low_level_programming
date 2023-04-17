@@ -22,6 +22,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		new_friend->owner = owner;
 	} else
 	{
+		free(new_friend);
 		return (NULL);
 	}
 
