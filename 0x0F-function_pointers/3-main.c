@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int operand1, operand2, solution;
-	char sign;
+	char *sign;
 	int (*operation)(int, int);
 
 	if (argc != 4)
@@ -26,15 +26,15 @@ int main(int argc, char *argv[])
 
 	operation = get_op_func(argv[2]);
 
-	if (!operation)
+	if (!operation || sign[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	sign = *argv[2];
+	sign = argv[2];
 
-	if (operand2 == sign && (sign == '/' || sign == '%'))
+	if ((*sign == '%' && operand2 == 0) || (*sign == '/' && operand2 == 0))
 	{
 		printf("Error\n");
 		exit(100);
