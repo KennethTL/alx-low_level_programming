@@ -23,8 +23,9 @@ int main(int argc, char *argv[])
 
 	operand1 = atoi(argv[1]);
 	operand2 = atoi(argv[3]);
+	sign = argv[2];
 
-	operation = get_op_func(argv[2]);
+	operation = get_op_func(sign);
 
 	if (!operation || sign[1] != '\0')
 	{
