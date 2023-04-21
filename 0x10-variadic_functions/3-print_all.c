@@ -17,15 +17,14 @@
 void print_all(const char *const format, ...)
 {
 	int index, num_args, _int;
-	char identifier, _chr, *s;
+	char _chr, *s;
 	float _float;
 	va_list args;
 
-	num_args = strlen(format), va_start(args, format);
-	for (index = 0; index < num_args; index++)
+	num_args = strlen(format), va_start(args, format), index = 0;
+	while (index < num_args)
 	{
-		identifier = format[index];
-		switch (identifier)
+		switch (format[index])
 		{
 			case 'c':
 				_chr = va_arg(args, int);
@@ -53,6 +52,7 @@ void print_all(const char *const format, ...)
 		}
 		if (index != (num_args - 1))
 			printf(", ");
+		index++;
 	}
 	printf("\n");
 	va_end(args);
