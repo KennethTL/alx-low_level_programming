@@ -21,15 +21,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	for (index = 0; index < n; index++)
 	{
 		val = va_arg(args, int);
-		if (index == (n - 1))
+
+		printf("%d", val);
+
+		if (index != (n - 1) && separator != NULL)
 		{
-			printf("%d", val);
-		} else if (separator == NULL)
-		{
-			printf("%d ", val);
-		} else
-		{
-			printf("%d%c ", val, *separator);
+			printf("%s", separator);
 		}
 	}
 	va_end(args);
