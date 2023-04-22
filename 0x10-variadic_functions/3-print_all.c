@@ -21,7 +21,7 @@ void print_all(const char *const format, ...)
 	float _float;
 	va_list args;
 
-	num_args = strlen(format), va_start(args, format), index = 0;
+	num_args = strlen(format), va_start(args, format), index = 0, div = "";
 	if (!format)
 		return;
 	while (index < num_args)
