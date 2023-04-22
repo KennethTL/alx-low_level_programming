@@ -16,42 +16,41 @@
  */
 void print_all(const char *const format, ...)
 {
-	int index, num_args, _int;
-	char _chr, *s, *div;
-	float _float;
+	int index = 0;
+	char *div, *string;
 	va_list args;
 
-	num_args = strlen(format), va_start(args, format), index = 0, div = "";
-	if (!format)
-		return;
-	while (index < num_args)
+	div = "";
+	va_start(args, format);
+
+	if (format)
 	{
-		switch (format[index])
+		while (format[index])
 		{
-			case 'c':
-				_chr = va_arg(args, int);
-				printf("%s%c", div, _chr);
-				break;
-			case 'i':
-				_int = va_arg(args, int);
-				printf("%s%d", div, _int);
-				break;
-			case 'f':
-				_float = va_arg(args, double);
-				printf("%s%f", div, _float);
-				break;
-			case 's':
-				s = va_arg(args, char*);
-				if (s == NULL)
-					printf("(nil)");
-				printf("%s%s", div, s);
-				break;
-			default:
-				index++;
-				continue;
+			switch (format[index])
+			{
+				case 'c':
+					printf("%s%c", div,  va_arg(args, int));
+					break;
+				case 'i':
+					printf("%s%d", div,  va_arg(args, int));
+					break;
+				case 'f':
+					printf("%s%f", div,  va_arg(args, double));
+					break;
+				case 's':
+					string = va_arg(args, char *);
+					if (!string)
+						string = "(nil)";
+					printf("%s%s", div, string);
+					break;
+				default:
+					index++;
+					continue;
+			}
+			div = ", ";
+			index++;
 		}
-		div = ", ";
-		index++;
 	}
 	printf("\n");
 	va_end(args);
