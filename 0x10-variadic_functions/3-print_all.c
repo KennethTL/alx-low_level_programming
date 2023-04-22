@@ -21,7 +21,9 @@ void print_all(const char *const format, ...)
 	float _float;
 	va_list args;
 
-	num_args = strlen(format), va_start(args, format), index = 0;
+	num_args = strlen(format);
+	va_start(args, format);
+	index = 0;
 	while (index < num_args)
 	{
 		switch (format[index])
@@ -45,6 +47,7 @@ void print_all(const char *const format, ...)
 				printf("%s", s);
 				break;
 			default:
+				index++;
 				continue;
 		}
 		if (index != (num_args - 1))
