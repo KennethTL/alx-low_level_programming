@@ -25,7 +25,7 @@ void print_binary(unsigned long n)
 			printf("0");
 		}
 
-		mask = mask >> 1;
+		mask >>= 1;
 	}
 
 	if (!mask)
