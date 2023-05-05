@@ -13,6 +13,8 @@ unsigned int flip_bits(unsigned long n, unsigned long m)
 	int total_bits;
 	unsigned long int difference;
 
+	total_bits = 0;
+
 	difference = n ^ m;
 
 	for (; difference > 0; difference >>= 1)
