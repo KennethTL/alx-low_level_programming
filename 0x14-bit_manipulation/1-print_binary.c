@@ -6,7 +6,7 @@
  *
  * Return: void
  */
-void print_binary(unsigned long n)
+void print_binary(unsigned long int n)
 {
 	int bin_val;
 	unsigned long int mask;
