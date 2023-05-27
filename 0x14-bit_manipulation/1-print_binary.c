@@ -28,7 +28,7 @@ void print_binary(unsigned long int n)
 		mask >>= 1;
 	}
 
-	if (!mask)
+	if (!bin_val)
 	{
 		printf("0");
 	}
